@@ -36,10 +36,12 @@ CREATE TABLE solicitud (
     
     id_tipo_prestamo CHAR(36) NOT NULL,
     
-    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     
     FOREIGN KEY (id_estado) REFERENCES estado(id_estado),
     FOREIGN KEY (id_tipo_prestamo) REFERENCES tipo_prestamo(id_tipo_prestamo)
+
+    
 );
 
 
@@ -53,4 +55,5 @@ INSERT INTO tipo_prestamo (id_tipo_prestamo, nombre, monto_minimo, monto_maximo,
 INSERT INTO estado (id_estado, nombre, descripcion) VALUES
 ('9a7b3300-1d8f-4b7c-bc0d-1a2f0c9a7e21', 'RECHAZADO', 'La solicitud fue evaluada y no cumple con los requisitos'),
 ('c1f2e110-3a4b-4d2c-8b2f-5f6a7c8d9e10', 'PENDIENTE_DE_REVISION', 'La solicitud está en proceso de revisión'),
-('e5b6f720-6c8d-4e9a-9f2d-7b8c9d0e1f11', 'APROBADO', 'La solicitud cumple con los requisitos y fue aceptada');
+('e5b6f720-6c8d-4e9a-9f2d-7b8c9d0e1f11', 'APROBADO', 'La solicitud cumple con los requisitos y fue aceptada'),
+('a3c9d812-7f4e-4b1a-8e2f-9c1d2f3e4b5a', 'REVISION_MANUAL', 'La solicitud requiere revisión manual por parte del asesor');;
