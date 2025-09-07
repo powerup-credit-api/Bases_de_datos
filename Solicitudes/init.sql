@@ -36,7 +36,7 @@ CREATE TABLE solicitud (
     
     id_tipo_prestamo CHAR(36) NOT NULL,
     
-    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     
     FOREIGN KEY (id_estado) REFERENCES estado(id_estado),
     FOREIGN KEY (id_tipo_prestamo) REFERENCES tipo_prestamo(id_tipo_prestamo)
